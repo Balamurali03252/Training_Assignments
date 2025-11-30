@@ -1,0 +1,26 @@
+package javacodingAssignment;
+
+import java.util.Scanner;
+
+public class countWords {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String str = sc.nextLine();
+
+        // Removing extra spaces at start/end and multiple spaces in between
+        str = str.trim();
+        
+        if (str.isEmpty()) {
+            System.out.println("\nTotal Words: 0");
+        } else {
+            String words[] = str.split("\\s+");
+            System.out.println("\nTotal Words: " + words.length);
+        }
+
+        sc.close();
+    }
+}
