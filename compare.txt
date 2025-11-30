@@ -1,0 +1,36 @@
+package javacodingAssignment;
+
+import java.util.Scanner;
+
+public class compareStrings {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+
+        // Using equals() method
+        if (str1.equals(str2)) {
+            System.out.println("\nThe strings are equal (equals method).");
+        } else {
+            System.out.println("\nThe strings are not equal (equals method).");
+        }
+
+        // Using compareTo() method
+        int cmp = str1.compareTo(str2);
+        if (cmp == 0) {
+            System.out.println("The strings are equal (compareTo method).");
+        } else if (cmp < 0) {
+            System.out.println("First string is smaller than second string (compareTo method).");
+        } else {
+            System.out.println("First string is greater than second string (compareTo method).");
+        }
+
+        sc.close();
+    }
+}
