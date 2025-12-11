@@ -1,0 +1,34 @@
+package Assignment;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class opentab {
+  @Test
+  public void opentab() {
+	  WebDriver driver= new ChromeDriver();
+	  driver.get("https://rahulshettyacademy.com/AutomationPractice/ ");
+	  driver.manage().window().maximize();
+	  
+	  String parenttab= driver.getWindowHandle();
+	  System.out.println("parent tab-> "+parenttab);
+	  
+	  WebElement opentab= driver.findElement(By.id("opentab"));
+	  opentab.click();
+	  
+	  Set<String> alltab= driver.getWindowHandles();
+	  
+	  for(String eachtab : alltab) {
+		  if(!eachtab.equals(alltab)) {
+			  driver.switchTo().window(eachtab);
+		  }
+	  }
+	  WebElement text= driver.findElement(By.cssSelector("div[class='section-title mt-50'] h2"));
+	  System.out.println("text-> "+text);
+  }
+}
