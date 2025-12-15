@@ -1,0 +1,77 @@
+package oopsassignment;
+
+import java.util.Scanner;
+
+class BankAccount {
+    long accountNo;
+    double balance;
+    Scanner sc = new Scanner(System.in);
+
+    void deposit() {
+        System.out.print("Enter amount to deposit: ");
+        double amt = sc.nextDouble();
+        balance = balance + amt;
+        System.out.println("Amount Deposited: " + amt);
+        System.out.println("Updated Balance: " + balance);
+    }
+
+    void withdraw() {
+        System.out.print("Enter amount to withdraw: ");
+        double amt = sc.nextDouble();
+        if (amt > balance) {
+            System.out.println("Insufficient Balance!");
+        } else {
+            balance = balance - amt;
+            System.out.println("Amount Withdrawn: " + amt);
+            System.out.println("Updated Balance: " + balance);
+        }
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    void addInterest() {
+        System.out.print("Enter time in years: ");
+        double time = sc.nextDouble();
+        double interest = (balance * interestRate * time) / 100;
+        balance = balance + interest;
+        System.out.println("Interest Added: " + interest);
+        System.out.println("Updated Balance with Interest: " + balance);
+    }
+}
+
+class SalaryAccount extends BankAccount {
+    double monthlySalary;
+
+    void creditSalary() {
+        balance = balance + monthlySalary;
+        System.out.println("Salary Credited: " + monthlySalary);
+        System.out.println("Updated Balance: " + balance);
+    }
+}
+
+public class code2 {
+    public static void main(String[] args) {
+
+   
+        System.out.println("Savings Account-");
+        SavingsAccount sa = new SavingsAccount();
+        sa.accountNo = 1001;
+        sa.balance = 5000;
+        sa.interestRate = 5;
+        sa.deposit();
+        sa.withdraw();
+        sa.addInterest();
+
+       
+        System.out.println("\nSalary Account-");
+        SalaryAccount sal = new SalaryAccount();
+        sal.accountNo = 2001;
+        sal.balance = 10000;
+        sal.monthlySalary = 25000;
+        sal.creditSalary();
+        sal.deposit();
+        sal.withdraw();
+    }
+}
