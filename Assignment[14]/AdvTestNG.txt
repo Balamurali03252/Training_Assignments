@@ -1,0 +1,2 @@
+TestNG is nicer than JUnit because it lets you run tests at the same time, skip tests if something fails, feed in different data easily, organize tests into groups, and even gives you neat HTML reports automatically.
+It is simple faster and effective than Junit.
