@@ -1,0 +1,45 @@
+package oopsassignment;
+
+class Student{
+	private String Sname;
+	private long rollno;
+	private float Smark;
+	
+	public String getStuname(){
+		return Sname;
+	}
+	public void SetStuname(String Sname) {
+		this.Sname= Sname;
+	}
+	public long getRnum() {
+		return rollno;
+	}
+	public void setRnum(long rollno) {
+		this.rollno= rollno;
+	}
+	public float getStumark() {
+		return Smark;
+	}
+	public void setStumark(float Smark) {
+		this.Smark= Smark;
+	}
+}
+
+public class code1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student detail= new Student();
+		detail.SetStuname("Balamurali");
+		String Sname= detail.getStuname();
+		detail.setRnum(123);
+		long rollno=detail.getRnum();
+		detail.setStumark(99);
+		float Smark=detail.getStumark();
+		System.out.println("The Student Name is- "+Sname);
+		System.out.println("The Student Roll Number is- "+rollno);
+		System.out.println("The Student mark is- "+Smark);
+
+	}
+
+}
